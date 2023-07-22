@@ -1,0 +1,91 @@
+.containerPage{
+    max-width: 1200px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 80px 40px;
+}
+
+@media (max-width: 550px) {
+    .containerPage {
+        padding: 4rem 15px 0px 15px;
+    }
+}
+
+.contentPage{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+@media (max-width:900px){
+    .contentPage{
+        flex-wrap: wrap;
+    }
+}
+
+.office{
+    font-size: 5rem;
+    font-family: cursive;
+}
+
+@media (max-width: 700px) {
+    .office {
+        font-size:4.5rem
+    }
+}
+
+@media (max-width: 600px) {
+    .office {
+        font-size:4.5rem
+    }
+}
+
+@media (max-width: 400px) {
+    .office {
+        font-size:4rem;
+    }
+}
+
+.contact{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.network{
+    display: flex;
+    font-size: x-large;
+    gap: 0.4rem;
+}
+
+.image{
+    width: 100%;
+}
+
+.btn{
+    font-size: larger;
+    padding: 0.4rem;
+    border: 1px solid #130331;
+    border-radius: 0.4rem;
+    background-color: var(--color-blue);
+}
+
+
+.element {
+    scrollbar-width: thin;
+    scrollbar-color: black transparent;
+  }
+  
+  .element::-webkit-scrollbar {
+    width: 3px;
+    height: 3px;
+  }
+  
+  .element::-webkit-scrollbar-track {
+    background: transparent;
+    padding: 2px;
+  }
+  
+  .element::-webkit-scrollbar-thumb {
+    background-color: #000;
+  }

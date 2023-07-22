@@ -1,0 +1,86 @@
+.skills {
+    padding: 50px 0px;
+  }
+  .skills .skills-flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    width: 100%;
+  }
+  @media (max-width: 700px) {
+    .skills .skills-flex-container {
+      gap: 30px;
+    }
+  }
+  .skills .skills-flex-container .box {
+    flex: 1 1 15%;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 24px; 
+    padding: 15px;
+    border: 2px solid;
+    border-radius: 6px;
+    transition: all 0.3s ease-in;
+  }
+  .skills .skills-flex-container .box .image {
+    transition: all 0.3s ease-in-out 0.1s;
+    mix-blend-mode: multiply;
+  }
+  .skills .skills-flex-container .box .image img {
+    max-width: 75px;
+    object-fit: contain;
+    mix-blend-mode: multiply;
+
+  }
+  .skills .skills-flex-container .box .title {
+    margin-top: 15px;
+    text-align: center;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+  }
+  .skills .skills-flex-container .box:hover {
+    box-shadow: rgba(0, 0, 0, 0.5) 20px 20px 30px;
+    transform: scale(1.1);
+  }
+  .skills .skills-flex-container .box:hover .image {
+    transform: scale(1.5) translateY(-20px);
+    mix-blend-mode: multiply;
+
+  }
+  .skills .skills-flex-container .box:hover .image img {
+    animation: bouncing 0.5s 0.3s;
+    mix-blend-mode: multiply;
+  }
+  .skills .skills-flex-container .box:hover .title {
+    letter-spacing: 2px;
+  }
+  @media (max-width: 1100px) {
+    .skills .skills-flex-container .box {
+      flex: 1 0 25%;
+    }
+  }
+  @media (max-width: 630px) {
+    .skills .skills-flex-container .box {
+      flex: 1 0 35%;
+      padding: 15px;
+    }
+    .skills .skills-flex-container .box .image img {
+      max-width: 50px;
+    mix-blend-mode: multiply;
+
+    }
+  }
+  
+  @keyframes bouncing {
+    from, to {
+      transform: scale(1, 1);
+    }
+    25% {
+      transform: scale(0.9, 1.1);
+    }
+    50% {
+      transform: scale(1.1, 0.9);
+    }
+    75% {
+      transform: scale(0.95, 1.05);
+    }
+  }

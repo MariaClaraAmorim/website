@@ -1,95 +1,92 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+"use client";
+
+import About from "@/components/about";
+import HomePage from "@/components/home";
+import Projects from "@/components/projects";
+import Skills from "@/components/skills";
+import { useState } from "react";
+import { ThemeProvider } from "styled-components";
+import "./header.css";
+import { GlobalStyles, darkTheme, lightTheme } from "./theme";
+import { ScrollTop } from "@/components/scrollTop";
 
 export default function Home() {
+  const [classOn, setClassOn] = useState(false);
+
+  const [theme, setTheme] = useState("light");
+
+  const switchTheme = () => {
+    theme === "light" ? setTheme("dark") : setTheme("light");
+  };
+
+  const [themeMoon, setThemeMoon] = useState(false);
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <>
+      <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
+        <GlobalStyles />
+        <header>
+          <div className="container">
+            <div className="nameHeader">
+              <p className="name">&lt;Maria Clara</p>
+              <p className="surname">A.</p>
+              <p className="name">/&gt;</p>
+            </div>
+
+            <div
+              className={classOn ? "menu-section on" : "menu-section"}
+              onClick={() => setClassOn(!classOn)}
+            >
+              <div className="menu-toggle">
+                <div className="one"></div>
+                <div className="two"></div>
+                <div className="three"></div>
+              </div>
+
+              <nav>
+                <ul>
+                  <li>
+                    <a className="details" href="#home">~/Home$</a>
+                  </li>
+                  <li>
+                    <a className="details" href="#sobre">~/Sobre$</a>
+                  </li>
+                  <li>
+                    <a className="details" href="#habilidades">~/Habilidades$</a>
+                  </li>
+                  <li>
+                    <a className="details" href="#projetos">~/Projetos$</a>
+                  </li>
+                  <li>
+                    <a className="details" href="#contato">~/Contato$</a>
+                  </li>
+                  <li>
+                    <button onClick={switchTheme}>Switch Theme</button>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </header>
+
+        <div id="home">
+          <HomePage />
         </div>
-      </div>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+        <div id="sobre">
+          <About />
+          <ScrollTop />
+        </div>
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+        <div id="habilidades">
+          <Skills />
+          <ScrollTop />
+        </div>
+        <div id="projetos">
+          <Projects />
+          <ScrollTop />
+        </div>
+      </ThemeProvider>
+    </>
+  );
 }
