@@ -66,19 +66,9 @@ const projects = [
       description:
         'Clonagem da plataforma discord',
     }, 
+
     {
       id: 7,
-      url: '',
-      img: '/projects/discord/discord.png',
-      title: 'Clone Discord',
-      type: 'Website',
-      github: 'https://github.com/MariaClaraAmorim/clone-discord',
-      web: 'https://clone-discord-sage.vercel.app/',
-      description:
-        'Clonagem da plataforma discord',
-    }, 
-    {
-      id: 8,
       url: '',
       img: '/projects/anime/anime.png',
       title: 'Anime',

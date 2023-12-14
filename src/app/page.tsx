@@ -53,10 +53,10 @@ export default function Home({ scrollPosition }: { scrollPosition: number }) {
     }
   };
 
-  useEffect(() => {
+ /*  useEffect(() => {
     const newOpacity = handleOpacity();
     setOpacity(newOpacity);
-  }, [scrollPosition]);
+  }, [scrollPosition]); */
 
   const switchTheme = () => {
     theme === "light" ? setTheme("dark") : setTheme("light");
