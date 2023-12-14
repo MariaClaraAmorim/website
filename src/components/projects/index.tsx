@@ -49,24 +49,25 @@ export default function Projects() {
     <>
       <div className="containerPage">
         <h1 className="title">
-        <BsTerminal /> Portfolio: <span className="nav"> ~/Projetos-Principais$ </span>
+          <BsTerminal /> Portfolio: <span className="nav"> ~/Projetos$ </span>
         </h1>
         <div>
           <div>
             <ul className="ul">
               {projects.slice(0, 9).map((project) => {
                 return (
-                  <li className="li"  key={project.id}>
+                  <li className="li" key={project.id}>
                     <div className="box">
-                      <Link href={`/project/${project.url}`} key={project.id}>
+                      <Link href={`/${project.url}`} key={project.id}>
                         <div className="project">
-                          <Image className="imageProject"
-                             width={400}
-                             height={250}
+                          <Image
+                            className="imageProject"
+                            width={400}
+                            height={250}
                             src={project.img}
                             alt={project.title}
                           />
-                          <div className="descriptionProject">
+                          <div className="infor">
                             <h2>{project.title}</h2>
                             <span>{project.type}</span>
                             <span>{project.description}</span>
@@ -80,42 +81,6 @@ export default function Projects() {
             </ul>
           </div>
         </div>
-
-        <h1 className="title">
-        <BsTerminal /> Portfolio: <span className="nav"> ~/Projetos$ </span>        
-        </h1>
-
-       {/*  <div className="contentPage">
-          <ul className="ul">
-            {itemsApi.map((item) => (
-              <li className="li" key={item}>
-                <div className="box">
-                  <div className="description">
-                    <div className="titleProject">
-                      {item.name.toUpperCase()}
-                    </div>
-                    <div className="">Linguagem: {item.language}</div>
-                    <div className="url">
-                      <a href={item.html_url}>URL: {item.html_url}</a>
-                    </div>
-                    <div className="urlurl">
-                      <a href={item.homepage}>
-                        {" "}
-                        Vercel: {item.homepage} {item.description}
-                      </a>
-                    </div>
-                    <div className="created_at">
-                      Data Criação:{" "}
-                      {Intl.DateTimeFormat("pt-BR").format(
-                        new Date(item.created_at)
-                      )}
-                    </div>
-                  </div>
-                </div>
-              </li>
-            ))}{" "}
-          </ul>
-        </div> */}
       </div>
     </>
   );

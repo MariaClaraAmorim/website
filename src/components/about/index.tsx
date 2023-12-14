@@ -52,11 +52,10 @@ export default function About() {
                   <div>
                     <p className="blue">
                       Idade:
-                      <span className="orange">20 anos;</span>
+                      <span className="orange">21 anos;</span>
                     </p>
                   </div>
                   <span className="purple">{"\u007D"}</span>
-
                 </div>
 
                 <div data-aos="zoomIn">
@@ -74,10 +73,8 @@ export default function About() {
                       <span className="orange">IFBA;</span>
                     </p>
                   </div>
-                
                 </div>
-                  <span className="purple">{"\u007D"}</span>
-
+                <span className="purple">{"\u007D"}</span>
               </div>
               <div>
                 <div data-aos="zoomIn">
@@ -100,10 +97,29 @@ export default function About() {
                       Período:
                       <span className="orange">Agosto 2021 - Junho 2023;</span>
                     </p>
-
+                  </div>
+                  <br />
+                  <div>
+                    <p className="blue">
+                      Função:
+                      <span className="orange">Suporte de TI;</span>
+                    </p>
+                  </div>
+                  <div>
+                    <p className="blue">
+                      Local:
+                      <span className="orange">ACP Group;</span>
+                    </p>
+                  </div>
+                  <div>
+                    <p className="blue">
+                      Período:
+                      <span className="orange">
+                        Agosto 2023 - Outubro 2023 (temporário);
+                      </span>
+                    </p>
                   </div>
                   <span className="purple">{"\u007D"}</span>
-
                 </div>
 
                 <div data-aos="zoomIn">
